@@ -3,6 +3,7 @@
   --color-accent: rgb(84, 0, 188);
   accent-color: var(--color-accent);
   /* color: var(--color-accent); */
+  /* color-scheme: dark; */
 }
 
 body {
@@ -13,9 +14,12 @@ body {
 }
 
 nav {
+  --border-color: oklch(50% 10% 200 / 40%);
   display: flex;
   margin-bottom: 2.5em;
   border-bottom: 1px solid oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
+
   /* border-bottom-style: solid;
   border-bottom-color: oklch(80% 3% 200); */
 }
@@ -33,7 +37,8 @@ nav a {
 }
 
 nav a.current, nav a:hover {
-  border-bottom: 0.4em solid oklch(90% 3% 200);
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  border-bottom-color: var(--border-color);
   padding-bottom: 0.15em;
 }
 
@@ -44,7 +49,10 @@ nav a.current {
 
 nav a:hover {
   border-bottom-color: var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  /* background-color: oklch(from var(--color-accent) 95% 5% h); */
+  background-color: color-mix(
+    in oklch, var(--color-accent), canvas 85%
+    );
   /* padding-bottom: 0.15em; */
 }
 
@@ -67,16 +75,16 @@ label, button {
 
 /* form {
   display: block;
-}
+} */
 
-label, input, textarea, button {
+select, input, textarea, button {
   font:inherit;
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
 
-label {
+/* label {
   margin-block: 12px;
 } */
 
@@ -129,4 +137,13 @@ section h2:hover {
 section strong:hover {
   /* color: var(--color-accent); */
   color: var(--hover-color);
+}
+
+
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 80%;
+  font-family: inherit;
 }
