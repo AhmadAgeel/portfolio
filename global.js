@@ -19,7 +19,7 @@ function $$(selector, context = document) {
 const BASE_PATH = (location.hostname === 'localhost' 
   || location.hostname === '127.0.0.1')
   ? '/'                  // Local server
-  : 'https://ahmadageel.github.io/';         // GitHub Pages repo name
+  : 'https://ahmadageel.github.io/portfolio/';         // GitHub Pages repo name
 
 let pages = [
   { url: '', title: 'Home' },
