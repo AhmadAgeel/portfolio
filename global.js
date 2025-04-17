@@ -4,10 +4,6 @@ function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
 }
 
-const BASE_PATH = (location.hostname === 'localhost' 
-  || location.hostname === '127.0.0.1')
-  ? '/'                  // Local server
-  : 'AhmadAgeel.github.io/';         // GitHub Pages repo name
 
 // let navLinks = $$('nav a')
 // let currentLink = navLinks.find(
@@ -20,6 +16,10 @@ const BASE_PATH = (location.hostname === 'localhost'
 // }
 
 // currentLink?.classList.add('current')
+const BASE_PATH = (location.hostname === 'localhost' 
+  || location.hostname === '127.0.0.1')
+  ? '/'                  // Local server
+  : 'portfolio';         // GitHub Pages repo name
 
 let pages = [
   { url: '', title: 'Home' },
